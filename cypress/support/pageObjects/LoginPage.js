@@ -35,13 +35,14 @@ class LoginPage
 
             
                 }
-     
+   
      getLaunchDevServer(){
     
         return   cy.get(':nth-child(1) > .card > .card-body > .row > .col-lg-4 > .btn')
 
                
-              }       
+              }    
+        
     
 }
 

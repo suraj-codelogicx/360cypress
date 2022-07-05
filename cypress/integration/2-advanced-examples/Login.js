@@ -5,35 +5,92 @@ import LoginPage from '../../support/pageObjects/LoginPage'
 describe('360 login fuctionality', function(){
 
     
-    before(function() {
+    
+    beforeEach(function() {
 
         cy.fixture('example').then(function(data){
 
-            this.data = data
+           this.data = data
         })
         
 
       })
 
+      const loginPage = new LoginPage()
+
+
     it('Login to 360dev server', function(){
 
-        const loginPage = new LoginPage()
 
         loginPage.getException();
 
        cy.visit('https://adminfontend.the360.in/')
 
-       loginPage.getEmail().type(this.data.email)
 
-       loginPage.getPassword().type(this.data.password)
-    
+       loginPage.getEmail().type(this.data.email).invoke('attr', 'placeholder').should('contain', 'Email address')
+
+       loginPage.getPassword().type(this.data.password).invoke('attr', 'placeholder').should('contain', 'Password')
+      
+       loginPage.getSubmitButton().should('be.visible')
        loginPage.getSubmitButton().click()
 
        loginPage.getAlert().click()
-      
+
+       loginPage.getLaunchDevServer().should('contain', 'Launch')
+
        loginPage.getLaunchDevServer().click()
 
     })
+
+    it('Login to 360dev server with wrong email ', function(){
+        const loginPage = new LoginPage()
+
+
+        loginPage.getException();
+
+       cy.visit('https://adminfontend.the360.in/')
+
+
+       loginPage.getEmail().type('abhi@yopmail.com')
+
+       loginPage.getPassword().type(this.data.password).invoke('attr', 'placeholder').should('contain', 'Password')
+      
+       loginPage.getSubmitButton().should('be.visible')
+       loginPage.getSubmitButton().click()
+
+
+    })
+
+    it('Login to 360dev server wrong password', function(){
+
+
+        loginPage.getException();
+
+       cy.visit('https://adminfontend.the360.in/')
+
+
+       loginPage.getEmail().type(this.data.email).invoke('attr', 'placeholder').should('contain', 'Email address')
+
+       loginPage.getPassword().type('56888')
+      
+       loginPage.getSubmitButton().should('be.visible')
+       loginPage.getSubmitButton().click()
+
+
+    })
+
+    it('Login to 360dev server without any credential', function(){
+
+
+        loginPage.getException();
+
+       cy.visit('https://adminfontend.the360.in/')
+ 
+       loginPage.getSubmitButton().click()
+
+
+    })
+
 
    
 
