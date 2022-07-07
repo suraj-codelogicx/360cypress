@@ -1,6 +1,5 @@
 /// <reference types="Cypress" />
 
-import LoginPage from '../../support/pageObjects/LoginPage'
 
 import GuardprofilePage from '../../support/pageObjects/GuardprofilePage'
 
@@ -18,31 +17,13 @@ describe('360 login fuctionality', function(){
 
       })
 
-      const loginPage = new LoginPage()
       const guardPage = new GuardprofilePage()
 
 
     it('Guard Profile', function(){
 
+      cy.login(this.data.email, this.data.password);
 
-        loginPage.getException();
-
-       cy.visit('https://adminfontend.the360.in/')
-
-
-       loginPage.getEmail().type(this.data.email).invoke('attr', 'placeholder').should('contain', 'Email address')
-
-       loginPage.getPassword().type(this.data.password).invoke('attr', 'placeholder').should('contain', 'Password')
-      
-       loginPage.getSubmitButton().should('be.visible')
-       loginPage.getSubmitButton().click()
-
-       loginPage.getAlert().click()
-
-       loginPage.getLaunchDevServer().should('contain', 'Launch')
-
-       loginPage.getLaunchDevServer().click()
-  
        guardPage.getStaff().click()
 
        guardPage.getGuard().click()
@@ -51,11 +32,11 @@ describe('360 login fuctionality', function(){
        
        guardPage.getAddGuardsButton().click({force: true})
 
-       guardPage.getFirstName().type('nam0')
+       guardPage.getFirstName().type('suraj')
        
-       guardPage.getLastName().type('t050')
+       guardPage.getLastName().type('test')
 
-       guardPage.getPhone().type('09560')
+       guardPage.getPhone().type('007')
 
        guardPage.getSubmit().click()
 
@@ -69,9 +50,9 @@ describe('360 login fuctionality', function(){
 
        guardPage.getRearrangeButton().wait(1000).should('be.visible').click({force: true})
       
-       guardPage.getGuardNameVisible().click()
+       guardPage.getGuardNameVisible().click({force: true} )
 
-       guardPage.getGuardNameSubmit().click()
+       guardPage.getGuardNameSubmit().click({force: true} )
 
 
     })

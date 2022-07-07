@@ -34,7 +34,13 @@ describe('360 login fuctionality', function(){
        loginPage.getSubmitButton().should('be.visible')
        loginPage.getSubmitButton().click()
 
-       loginPage.getAlert().click()
+       //if alert exists then only click function
+       loginPage.getAlert().then($body => {
+        if ($body.length > 0) {   
+            //evaluates as true
+            cy.wrap($body).click()
+        }
+    });
 
        loginPage.getLaunchDevServer().should('contain', 'Launch')
 
