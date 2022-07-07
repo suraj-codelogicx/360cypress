@@ -44,14 +44,23 @@ describe('360 login fuctionality', function(){
 
        guardPage.getRearrangeButton().click({force: true})
 
-       guardPage.getGuardNameRemoveBtn().wait(1000).click()
+       guardPage.getGuardNameRemoveBtn().wait(1000).then($body => {
+        if ($body.length > 0) {   
+            //evaluates as true
+            cy.wrap($body).click()
+        }
+    })
 
        guardPage.getGuardNameSubmit().click()
 
        guardPage.getRearrangeButton().wait(1000).should('be.visible').click({force: true})
       
-       guardPage.getGuardNameVisible().click({force: true} )
-
+       guardPage.getGuardNameVisible().then($body => {
+        if ($body.length > 0) {   
+            //evaluates as true
+            cy.wrap($body).click({force: true})
+        }
+    });
        guardPage.getGuardNameSubmit().click({force: true} )
 
 

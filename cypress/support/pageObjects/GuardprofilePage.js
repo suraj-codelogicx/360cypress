@@ -36,7 +36,7 @@ class GuardprofilePage {
     }
 
     getGuardNameRemoveBtn() {
-        return cy.get(':nth-child(2) > .row > .col-lg-5 > .dangerBadge')
+        return cy.get('.dangerBadge')
 
     }
 
