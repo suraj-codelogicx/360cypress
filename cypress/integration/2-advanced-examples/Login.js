@@ -94,7 +94,6 @@ describe('360 login fuctionality', function(){
  
        loginPage.getSubmitButton().click()
 
-
     })
 
 

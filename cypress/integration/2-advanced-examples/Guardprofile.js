@@ -32,11 +32,11 @@ describe('360 login fuctionality', function(){
        
        guardPage.getAddGuardsButton().click({force: true})
 
-       guardPage.getFirstName().type('suraj')
+       guardPage.getFirstName().type('raj')
        
        guardPage.getLastName().type('test')
 
-       guardPage.getPhone().type('007')
+       guardPage.getPhone().type('008')
 
        guardPage.getSubmit().click()
 
