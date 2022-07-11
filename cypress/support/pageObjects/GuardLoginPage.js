@@ -43,8 +43,7 @@ class GuardLoginPage{
     getGateNumber() {
 
 
-        return  cy.get('#input-213')
-
+        return  cy.get(':nth-child(1) > :nth-child(2) > .v-input input')
     }
 
     getUseName() {

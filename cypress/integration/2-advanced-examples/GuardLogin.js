@@ -45,7 +45,7 @@ describe('Guard login fuctionality', function(){
 
      guardLogin.getSelectGuardName().click()
 
-     guardLogin.getGateNumber().click({force: true}).type('112',{force: true})
+     guardLogin.getGateNumber().type('112',{force: true})
 
      guardLogin.getUseName().type('suraj123')
 
