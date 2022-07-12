@@ -22,9 +22,9 @@ const loginPage = new LoginPage()
     cy.visit('https://adminfontend.the360.in/')
 
 
-    loginPage.getEmail().type(email).invoke('attr', 'placeholder').should('contain', 'Email address')
+    loginPage.getEmail().type(email).invoke('attr', 'type').should('contain', 'email')
 
-    loginPage.getPassword().type(password).invoke('attr', 'placeholder').should('contain', 'Password')
+    loginPage.getPassword().type(password).invoke('attr', 'type').should('contain', 'password')
    
     loginPage.getSubmitButton().should('be.visible')
     loginPage.getSubmitButton().click()
