@@ -49,31 +49,16 @@ class GuardLoginPage{
     getUseName() {
 
 
-        return  cy.get('#input-220')
+        return  cy.get('form > :nth-child(2) > :nth-child(1) > .v-input input')
 
     }
 
     getPassword() {
 
 
-        return  cy.get('#input-223')
+        return  cy.get(':nth-child(2) > :nth-child(2) > .v-input input')
     }
 
-    getTowerGuardLogin() {
-
-
-        return  cy.get(':nth-child(2) > .checkSwitch > #customSwitchsizemd')
-    }
-
-    getSelectTower() {
-
-
-        return  cy.get(':nth-child(4) > .col-12 > .v-input > .v-input__control > .v-input__slot > .v-select__slot > .v-select__selections')
-    }
-
-    getSelectTowerName(){
-     return   cy.contains("Cascade")
-    }
 
     getSubmit() {
 

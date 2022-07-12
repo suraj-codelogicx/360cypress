@@ -33,9 +33,9 @@ describe('Guard login fuctionality', function(){
       guardLogin.getGuardLogin().click()
 
 
-      guardLogin.getSearch().type('abby',{force: true});
+      guardLogin.getSearch().type('test',{force: true});
 
-      guardLogin.getSearchText().should('have.text', 'Abbyprama')
+      guardLogin.getSearchText().should('have.text', 'test')
 
       guardLogin.getSearch().clear()
 
@@ -51,16 +51,6 @@ describe('Guard login fuctionality', function(){
 
      guardLogin.getPassword().type('suraj123')
 
-     guardLogin.getTowerGuardLogin().click()
-
-     guardLogin.getSelectTower().click()
-
-     cy.wait(2000)
-
-     guardLogin.getSelectTowerName().click({force: true})
-
-     cy.wait(2000)
-
      guardLogin.getSubmit().click()
 
      cy.wait(2000)
@@ -68,6 +58,72 @@ describe('Guard login fuctionality', function(){
      guardLogin.getDeleteUser().click({force: true})
 
      guardLogin.geConfirmDelete().click()
+
+      
+    });
+
+    it('Guard Login with invalid username', function(){
+
+      cy.login(this.data.email, this.data.password);
+
+      guardPage.getStaff().click()
+
+      guardLogin.getGuardLogin().click()
+
+
+      guardLogin.getSearch().type('test',{force: true});
+
+      guardLogin.getSearchText().should('have.text', 'test')
+
+      guardLogin.getSearch().clear()
+
+      guardLogin.getAppLogin().click()
+
+     guardLogin.getSelectGuard().click()
+
+     guardLogin.getSelectGuardName().click()
+
+     guardLogin.getGateNumber().type('112',{force: true})
+
+     guardLogin.getUseName().type('.......')
+
+     guardLogin.getPassword().type('suraj123')
+
+     guardLogin.getSubmit().click()
+
+
+      
+    });
+
+    it('Guard Login with invalid password', function(){
+
+      cy.login(this.data.email, this.data.password);
+
+      guardPage.getStaff().click()
+
+      guardLogin.getGuardLogin().click()
+
+
+      guardLogin.getSearch().type('test',{force: true});
+
+      guardLogin.getSearchText().should('have.text', 'test')
+
+      guardLogin.getSearch().clear()
+
+      guardLogin.getAppLogin().click()
+
+     guardLogin.getSelectGuard().click()
+
+     guardLogin.getSelectGuardName().click()
+
+     guardLogin.getGateNumber().type('112',{force: true})
+
+     guardLogin.getUseName().type('suraj')
+
+     guardLogin.getPassword().type('ab')
+
+     guardLogin.getSubmit().click()
+
 
       
     });
