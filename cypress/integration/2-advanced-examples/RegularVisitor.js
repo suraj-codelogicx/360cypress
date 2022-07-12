@@ -4,7 +4,7 @@ import GuardprofilePage from '../../support/pageObjects/GuardprofilePage';
 
 import RegularVisitorPage from '../../support/pageObjects/RegularVisitorPage';
 
-describe('Guard login fuctionality', function(){
+describe('Regular Visitor fuctionality', function(){
 
     const guardPage = new GuardprofilePage()
     const regularVisitorPage = new RegularVisitorPage()
@@ -22,7 +22,7 @@ describe('Guard login fuctionality', function(){
 
 
 
-    it('Guard Login', function(){
+    it('Regular Visitor', function(){
 
       cy.login(this.data.email, this.data.password);
 
