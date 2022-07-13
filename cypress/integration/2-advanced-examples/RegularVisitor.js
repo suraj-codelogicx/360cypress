@@ -28,9 +28,14 @@ describe('Regular Visitor fuctionality', function(){
 
       guardPage.getStaff().click()
 
+      cy.wait(2000)
+
       regularVisitorPage.getRegularVisitorTab().click()
 
-      regularVisitorPage.getSearch().type('test', {froce: true})
+      cy.wait(2000)
+
+      //type test in search box
+      regularVisitorPage.getSearch().type('test', {force: true})
 
       cy.wait(2000)
       
@@ -40,31 +45,111 @@ describe('Regular Visitor fuctionality', function(){
 
       regularVisitorPage.getCloseVisitorsDetails().click()
 
+      cy.wait(2000)
+
+      //clear the search box after getting the results
       regularVisitorPage.getSearch().clear()
 
-      regularVisitorPage.getFilterButton().click()
-
-      regularVisitorPage.getFilterSearch().type('842184')
-
-      regularVisitorPage.getFilter().click()
-
-      regularVisitorPage.getFilterButton().click()
-
-      regularVisitorPage.getFilterSearch().clear()
-
-      regularVisitorPage.getFilter().click()
+      cy.wait(2000)
 
       regularVisitorPage.getFilterButton().click({force: true})
 
+      cy.wait(2000)
 
+      //type verification code in search box
+      regularVisitorPage.getFilterSearch().type('842184')
+
+      cy.wait(2000)
+
+      regularVisitorPage.getFilter().click()
+
+      cy.wait(2000)
+
+      regularVisitorPage.getFilterButton().click({force: true})
+
+      cy.wait(2000)
+
+      regularVisitorPage.getFilterSearch().clear()
+
+      cy.wait(2000)
+
+      regularVisitorPage.getFilter().click()
+
+      cy.wait(2000)
+
+      regularVisitorPage.getFilterButton().click({force: true})
+
+      cy.wait(2000)
+
+      //type c in category drodown
       regularVisitorPage.getFilterCategory().type('c').click()
+
+      cy.wait(2000)
 
       regularVisitorPage.getFilter().click()
 
 
-
-
       
+    });
+
+
+    it('Regular Visitor with negative values', function(){
+
+      cy.login(this.data.email, this.data.password);
+
+      guardPage.getStaff().click()
+
+      cy.wait(2000)
+
+      regularVisitorPage.getRegularVisitorTab().click()
+
+      cy.wait(2000)
+
+      //type invalid characters in search box
+      regularVisitorPage.getSearch().type('...', {force: true})
+
+      cy.wait(2000)
+      
+      regularVisitorPage.getSearch().clear()
+
+      cy.wait(2000)
+
+      regularVisitorPage.getFilterButton().click({force: true})
+
+      cy.wait(2000)
+
+      //type invalid details in filter search and press filter button
+      regularVisitorPage.getFilterSearch().type('x0x0')
+
+      cy.wait(2000)
+
+      regularVisitorPage.getFilter().click()
+
+      cy.wait(2000)
+
+      regularVisitorPage.getFilterButton().click({force: true})
+
+      cy.wait(2000)
+
+      regularVisitorPage.getFilterSearch().clear()
+
+      cy.wait(2000)
+
+      regularVisitorPage.getFilter().click()
+
+      cy.wait(2000)
+
+      regularVisitorPage.getFilterButton().click({force: true})
+
+      cy.wait(2000)
+
+      //type v in category filter dropdown menu
+      regularVisitorPage.getFilterCategory().type('v')
+
+      cy.wait(2000)
+
+      regularVisitorPage.getFilter().click()
+
 
       
     });
