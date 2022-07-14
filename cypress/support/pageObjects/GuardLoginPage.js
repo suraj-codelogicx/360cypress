@@ -63,13 +63,13 @@ class GuardLoginPage{
     getSubmit() {
 
 
-        return  cy.get('#modal-apploginlist___BV_modal_body_ > :nth-child(2) > .col-12 > .btn')
+        return  cy.get('[style="margin: 15px;"] > :nth-child(2) > .col-12 > .btn')
     }
 
     getDeleteUser() {
 
 
-        return  cy.get(':nth-child(1) > [aria-colindex="8"] > .list-inline > :nth-child(3) > .px-2')
+        return  cy.get(':nth-child(1) > [aria-colindex="8"] > .list-inline > :nth-child(2) > .px-2 > .uil')
     }
 
     geConfirmDelete() {

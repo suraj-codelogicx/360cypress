@@ -45,11 +45,11 @@ describe('Guard login fuctionality', function(){
 
      guardLogin.getSelectGuardName().click()
 
-     guardLogin.getGateNumber().type('112',{force: true})
+     guardLogin.getGateNumber().type('15',{force: true})
 
-     guardLogin.getUseName().type('suraj123')
+     guardLogin.getUseName().type('suraj12123')
 
-     guardLogin.getPassword().type('suraj123')
+     guardLogin.getPassword().type('suraj15123')
 
      guardLogin.getSubmit().click()
 
