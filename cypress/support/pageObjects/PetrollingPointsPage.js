@@ -14,7 +14,7 @@ class PetrollingPointsPage{
         return cy.get('.addButton')
     }
 
-    getAddName() {
+    getCheckPointAddName() {
 
         return cy.get(':nth-child(1) > :nth-child(1) > .v-input > .v-input__control > .v-input__slot input')
     }
@@ -22,6 +22,16 @@ class PetrollingPointsPage{
     getCheckpointArea() {
 
         return cy.get('form > :nth-child(1) > :nth-child(2) input')
+    }
+
+    getCheckpointLatitude() {
+
+        return cy.get('form > :nth-child(2) > :nth-child(1) input')
+    }
+
+    getCheckpointLongitude() {
+
+        return cy.get(':nth-child(2) > :nth-child(2) > .v-input input')
     }
 
     getSubmit() {
