@@ -34,7 +34,7 @@ describe('PetrollinPoints fuctionality', function(){
     
       petrollingPage.getPetrollinPointsTab().click()
 
-      petrollingPage.getSearch().type('test')
+      petrollingPage.getSearch().type('test',{force: true})
 
       cy.wait(2000)
 
@@ -42,9 +42,9 @@ describe('PetrollinPoints fuctionality', function(){
 
       petrollingPage.getAddCheckpoint().click({force: true})
 
-      petrollingPage.getCheckPointAddName().type('surajTest')
+      petrollingPage.getCheckPointAddName().type('surajTest2')
       
-      petrollingPage.getCheckpointArea().type('surajtestarea')
+      petrollingPage.getCheckpointArea().type('surajtestarea2')
 
       petrollingPage.getCheckpointLatitude().type('22.5805359')
 
@@ -64,7 +64,7 @@ describe('PetrollinPoints fuctionality', function(){
     
       petrollingPage.getPetrollinPointsTab().click()
 
-      petrollingPage.getSearch().type('. . *')
+      petrollingPage.getSearch().type('. . *',{force: true})
 
       cy.wait(2000)
 
@@ -72,13 +72,13 @@ describe('PetrollinPoints fuctionality', function(){
 
       petrollingPage.getAddCheckpoint().click({force: true})
 
-      petrollingPage.getCheckPointAddName().type('*0*0')
+      petrollingPage.getCheckPointAddName().type('*0*00')
       
-      petrollingPage.getCheckpointArea().type('...')
+      petrollingPage.getCheckpointArea().type('..0.')
 
-      petrollingPage.getCheckpointLatitude().type('....')
+      petrollingPage.getCheckpointLatitude().type('..0..')
 
-      petrollingPage.getCheckpointLongitude().type('....')
+      petrollingPage.getCheckpointLongitude().type('...0y.')
       
       petrollingPage.getSubmit().click()
 

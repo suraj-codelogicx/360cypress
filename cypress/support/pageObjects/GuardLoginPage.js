@@ -54,7 +54,7 @@ class GuardLoginPage{
     }
 
     getPassword() {
-
+ 
 
         return  cy.get(':nth-child(2) > :nth-child(2) > .v-input input')
     }
