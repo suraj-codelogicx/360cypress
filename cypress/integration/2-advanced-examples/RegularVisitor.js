@@ -57,23 +57,11 @@ describe('Regular Visitor fuctionality', function(){
       cy.wait(2000)
 
       //type verification code in search box
-      regularVisitorPage.getFilterSearch().type('842184')
+      regularVisitorPage.getFilterSearch().type('842184',{force: true})
 
       cy.wait(2000)
 
-      regularVisitorPage.getFilter().click()
-
-      cy.wait(2000)
-
-      regularVisitorPage.getFilterButton().click({force: true})
-
-      cy.wait(2000)
-
-      regularVisitorPage.getFilterSearch().clear()
-
-      cy.wait(2000)
-
-      regularVisitorPage.getFilter().click()
+      regularVisitorPage.getFilter().click({force: true})
 
       cy.wait(2000)
 
@@ -81,12 +69,26 @@ describe('Regular Visitor fuctionality', function(){
 
       cy.wait(2000)
 
-      //type c in category drodown
-      regularVisitorPage.getFilterCategory().type('c').click()
+      regularVisitorPage.getFilterButton().click({force: true})
+
+      regularVisitorPage.getFilterSearch().clear({force: true})
 
       cy.wait(2000)
 
       regularVisitorPage.getFilter().click()
+
+      cy.wait(2000)
+
+
+      regularVisitorPage.getFilterCategory().click({force: true})
+
+      cy.wait(2000)
+
+      regularVisitorPage.getFilterCategoryFilter().contains('Driver').click({force: true})
+
+
+      regularVisitorPage.getFilter().click({force: true})
+
 
 
       
@@ -95,6 +97,7 @@ describe('Regular Visitor fuctionality', function(){
 
     it('Regular Visitor with negative values', function(){
 
+      
       cy.login(this.data.email, this.data.password);
 
       guardPage.getStaff().click()
@@ -105,11 +108,13 @@ describe('Regular Visitor fuctionality', function(){
 
       cy.wait(2000)
 
-      //type invalid characters in search box
-      regularVisitorPage.getSearch().type('...', {force: true})
+      //type test in search box
+      regularVisitorPage.getSearch().type('..0.0', {force: true})
 
       cy.wait(2000)
       
+
+      //clear the search box after getting the results
       regularVisitorPage.getSearch().clear()
 
       cy.wait(2000)
@@ -118,24 +123,12 @@ describe('Regular Visitor fuctionality', function(){
 
       cy.wait(2000)
 
-      //type invalid details in filter search and press filter button
-      regularVisitorPage.getFilterSearch().type('x0x0')
+      //type verification code in search box
+      regularVisitorPage.getFilterSearch().type('xoxo',{force: true})
 
       cy.wait(2000)
 
-      regularVisitorPage.getFilter().click()
-
-      cy.wait(2000)
-
-      regularVisitorPage.getFilterButton().click({force: true})
-
-      cy.wait(2000)
-
-      regularVisitorPage.getFilterSearch().clear()
-
-      cy.wait(2000)
-
-      regularVisitorPage.getFilter().click()
+      regularVisitorPage.getFilter().click({force: true})
 
       cy.wait(2000)
 
@@ -143,12 +136,15 @@ describe('Regular Visitor fuctionality', function(){
 
       cy.wait(2000)
 
-      //type v in category filter dropdown menu
-      regularVisitorPage.getFilterCategory().type('v')
+      regularVisitorPage.getFilterButton().click({force: true})
+
+      regularVisitorPage.getFilterSearch().clear({force: true})
 
       cy.wait(2000)
 
       regularVisitorPage.getFilter().click()
+
+      
 
 
       

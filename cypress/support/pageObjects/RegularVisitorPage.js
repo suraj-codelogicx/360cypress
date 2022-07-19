@@ -8,7 +8,7 @@ class RegularVisitorPage
 
     getSearch() {
 
-        return cy.get('.col-md-5 > .v-input > .v-input__control > .v-input__slot input')
+        return cy.get('.v-input__slot input')
     }
 
     getVisitorsDetails() {
@@ -18,29 +18,32 @@ class RegularVisitorPage
 
     getCloseVisitorsDetails() {
 
-        return cy.get('.checklistModalCloseButton > .far')
+        return cy.get('.col-lg-4 > .closeButton > .far')
     }
 
     getFilterButton() {
 
-        return cy.get('.addButton')
+        return cy.get('.text-end > :nth-child(2)')
     }
 
     getFilterSearch() {
 
-        return cy.get('.pb-3 > .v-input > .v-input__control > .v-input__slot input')
+        return cy.get('.mb-2 > :nth-child(2) input')
     }
 
     getFilter() {
 
-        return cy.get('.col-lg-12 > .btn')
+        return cy.get('.submitButton ')
     }
 
     getFilterCategory() {
 
         return cy.get('.v-select__selections')
     }
+    getFilterCategoryFilter() {
 
+        return cy.get("div[role='listbox']")
+    }
 
 }
 
