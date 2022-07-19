@@ -42,9 +42,9 @@ describe('PetrollinPoints fuctionality', function(){
 
       petrollingPage.getAddCheckpoint().click({force: true})
 
-      petrollingPage.getCheckPointAddName().type('surajTest2')
+      petrollingPage.getCheckPointAddName().type('surajTest4')
       
-      petrollingPage.getCheckpointArea().type('surajtestarea2')
+      petrollingPage.getCheckpointArea().type('surajtestarea4')
 
       petrollingPage.getCheckpointLatitude().type('22.5805359')
 

@@ -39,7 +39,7 @@ class PetrollingRoutesPage {
     }
 
     getRouteDurationValue(){
-        return cy.get("div[role='listbox'] div[role='option']")
+        return cy.get("div[role='option']")
     }
 
     getAssignCheckPoints(){
