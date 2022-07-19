@@ -108,11 +108,11 @@ describe('PetrollingRoutes fuctionality', function(){
       petrollingRoutesPage.getTime().each(($ele, index) => {
         if (index === 0){
 
-            cy.wrap($ele).click().type('bh:00:00', {force:true})
+            cy.wrap($ele).click().type('00:00:00', {force:true})
 
         }else{
             
-            cy.wrap($ele).click().type('100:20:00', {force:true})
+            cy.wrap($ele).click().type('00:00:00', {force:true})
 
         }
            
