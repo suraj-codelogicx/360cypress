@@ -10,7 +10,7 @@ class GuardprofilePage {
     }
 
     getSearch() {
-        return cy.get('#input-149')
+        return cy.get('.card-body > .mb-0 > :nth-child(1) input')
     }
 
     getAddGuardsButton() {
@@ -18,7 +18,7 @@ class GuardprofilePage {
     }
 
     getFirstName() {
-        return cy.get('#modal-addguard___BV_modal_body_ > form > :nth-child(1) > :nth-child(1) input')
+        return cy.get('form > :nth-child(1) > :nth-child(1)')
     }
 
     getLastName() {
@@ -28,7 +28,7 @@ class GuardprofilePage {
         return cy.get('form > :nth-child(2) > .col-12 > .v-input')
     }
     getSubmit() {
-        return cy.get('#modal-addguard___BV_modal_body_ > :nth-child(2) > .col-12 > .btn')
+        return cy.get('.mt-2 > .col-12 > button')
     }
 
     getRearrangeButton() {
@@ -36,7 +36,7 @@ class GuardprofilePage {
     }
 
     getGuardNameRemoveBtn() {
-        return cy.get('.dangerBadge')
+        return cy.get(':nth-child(1) > .row > .text-end > .removeBadge')
 
     }
 
@@ -46,7 +46,7 @@ class GuardprofilePage {
     }
 
     getGuardNameVisible() {
-        return cy.get(':nth-child(1) > .row > .text-end > .successBadge')
+        return cy.get(':nth-child(2) > .row > .text-end > .toVisibleBadge')
 
     }
 

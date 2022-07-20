@@ -32,11 +32,11 @@ describe('360 login fuctionality', function(){
        
        guardPage.getAddGuardsButton().click({force: true})
 
-       guardPage.getFirstName().type('raj')
+       guardPage.getFirstName().type('raj2')
        
-       guardPage.getLastName().type('test')
+       guardPage.getLastName().type('test2')
 
-       guardPage.getPhone().type('008')
+       guardPage.getPhone().type('0082')
 
        guardPage.getSubmit().click()
 
@@ -44,23 +44,16 @@ describe('360 login fuctionality', function(){
 
        guardPage.getRearrangeButton().click({force: true})
 
-       guardPage.getGuardNameRemoveBtn().wait(1000).then($body => {
-        if ($body.length > 0) {   
-            //evaluates as true
-            cy.wrap($body).click()
-        }
-    })
+
+       guardPage.getGuardNameRemoveBtn().click({force: true})
+
 
        guardPage.getGuardNameSubmit().click()
 
        guardPage.getRearrangeButton().wait(1000).should('be.visible').click({force: true})
       
-       guardPage.getGuardNameVisible().then($body => {
-        if ($body.length > 0) {   
-            //evaluates as true
-            cy.wrap($body).click({force: true})
-        }
-    });
+       guardPage.getGuardNameVisible().click({force: true})
+
        guardPage.getGuardNameSubmit().click({force: true} )
 
 

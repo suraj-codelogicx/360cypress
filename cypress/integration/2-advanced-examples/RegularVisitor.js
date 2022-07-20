@@ -48,7 +48,7 @@ describe('Regular Visitor fuctionality', function(){
       cy.wait(2000)
 
       //clear the search box after getting the results
-      regularVisitorPage.getSearch().clear()
+      regularVisitorPage.getSearch().clear({force: true})
 
       cy.wait(2000)
 

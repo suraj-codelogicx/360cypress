@@ -23,7 +23,7 @@ class RegularVisitorPage
 
     getFilterButton() {
 
-        return cy.get('.text-end > :nth-child(2)')
+        return cy.get('.text-end > :nth-child(2) > .btn ')
     }
 
     getFilterSearch() {
