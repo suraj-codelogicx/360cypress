@@ -68,14 +68,8 @@ describe('Vehicle Log fuctionality', function(){
 
         cy.wait(2000)
 
-        vehicleLogPage.getGenerateReport().each(($ele, index) => {
-            if (index === 1) {
-
-                cy.wrap($ele).click({force: true});
-            }
-
-        })
-        
+        vehicleLogPage.getGenerateReport().eq(1).click({force: true});
+       
         cy.wait(2000)
 
         vehicleLogPage.getFilterSubmit().click({force: true});
@@ -128,13 +122,9 @@ describe('Vehicle Log fuctionality', function(){
        
         cy.wait(2000)
 
-        vehicleLogPage.getGenerateReport().each(($ele, index) => {
-            if (index === 1) {
+        
 
-                cy.wrap($ele).click({force: true});
-            }
-
-        })
+        vehicleLogPage.getGenerateReport().eq(1).click({force: true})
         
         cy.wait(2000)
 
