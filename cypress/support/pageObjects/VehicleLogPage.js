@@ -17,7 +17,7 @@ class VehicleLogPage{
 
     getFilterSubmit() {
 
-        return cy.get('.submitButton');
+        return cy.get('.addButton');
     }
 
     getSearch() {
@@ -29,6 +29,13 @@ class VehicleLogPage{
 
         return cy.get('[aria-rowindex="1"] > [aria-colindex="6"]')
     }
+
+    getValidateResultText() {
+
+        return cy.get('[role="alert"] > .text-center')
+    }
+
+
 
     getGenerateReport() {
 

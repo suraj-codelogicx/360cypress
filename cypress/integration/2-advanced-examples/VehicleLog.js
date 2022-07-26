@@ -56,7 +56,7 @@ describe('Vehicle Log fuctionality', function(){
 
         cy.wait(2000)
 
-        vehicleLogPage.getFilterSubmit().click();
+        vehicleLogPage.getFilterSubmit().click({force: true});
 
         cy.wait(2000)
 
@@ -77,6 +77,8 @@ describe('Vehicle Log fuctionality', function(){
         cy.wait(2000)
 
         vehicleLogPage.getReset().click({force: true})
+     
+        cy.wait(2000)
 
 
     });
@@ -113,16 +115,19 @@ describe('Vehicle Log fuctionality', function(){
 
         cy.wait(2000)
 
+        vehicleLogPage.getValidateResultText().should('have.text', 'There are no records to show')
+
         vehicleLogPage.getFilterSubmit().click();
 
         cy.wait(2000)
 
         vehicleLogPage.getSearch().type('....',{force: true});
-
        
         cy.wait(2000)
 
-        
+        vehicleLogPage.getValidateResultText().should('have.text', 'There are no records matching your request')
+
+        cy.wait(2000)
 
         vehicleLogPage.getGenerateReport().eq(1).click({force: true})
         
@@ -134,6 +139,7 @@ describe('Vehicle Log fuctionality', function(){
 
         vehicleLogPage.getReset().click({force: true})
 
+        cy.wait(2000)
 
     });
 
