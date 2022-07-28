@@ -24,6 +24,147 @@ class AssetsPage {
         return cy.contains('Add Asset Category')
     }
 
+    getAssetCategoryName(){
+        return cy.get("input[type='text']")
+    }
+
+    getAssetCategoryDescription(){
+        return cy.get(".material-input__component textarea")
+    }
+
+    getAddAssetCategoryActivate(){
+        return cy.get('#customSwitchsizemd')
+    }
+
+    getAssetCategorySubmit(){
+        return cy.get(".row  button[type='button']")
+    }
+
+    getAssetRegistration(){
+
+        return cy.contains('Asset Registration')
+    }
+
+    getSearchAssetRegistrations(){
+
+        return cy.get("input[type='text']")
+    }
+
+    getVerifySearchAssetRegistrationResult(){
+
+        return cy.get("td[role='cell']")
+    }
+
+    getRegisterNewAsset(){
+
+        return cy.contains('Register New Asset')
+    }
+
+    getAssetRegistrationType(){
+
+        return cy.get(':nth-child(1) > :nth-child(1) > .v-input > .v-input__control > .v-input__slot > .v-select__slot')
+    }
+
+    getAssetRegistrationTypeName(){
+
+        return cy.get("div[role='listbox'] .v-list-item__title")
+    }
+
+    getSelectAssetCategory(){
+
+        return cy.get(':nth-child(1) > :nth-child(2) > .v-input ')
+    }
+
+    getSelectAssetCategoryName(){
+
+        return cy.get('div[tabindex="0"] .v-list-item__content  .v-list-item__title')
+    }
+
+    getSelectVendorType(){
+
+        return cy.get(':nth-child(1) > .col-sm-12 > .v-input > .v-input__control > .v-input__slot')
+    }
+
+    getSelectVendorTypeName(){
+
+        return cy.get(':nth-child(1) > .col-sm-12 > .v-input > .v-input__control > .v-input__slot')
+    }
+
+    getAssetName(){
+
+        return cy.get('form > :nth-child(2) > :nth-child(1) input')
+    }
+
+    getAssesCode(){
+
+        return cy.get(':nth-child(2) > :nth-child(2) > .v-input input')
+    }
+
+    getPurchasePrice(){
+
+        return cy.get(':nth-child(2) > .col-sm-12 > .v-input input')
+    }
+
+    getPurchaseDate(){
+
+        return cy.get(':nth-child(3) > :nth-child(1) > .material-input__component > input')
+    }
+
+    getInstallationDate(){
+
+        return cy.get(':nth-child(3) > :nth-child(2) > .material-input__component > .material-input')
+    }
+
+    getManufactureDate(){
+
+        return cy.get(':nth-child(3) > .col-sm-12 > .material-input__component > .material-input')
+    }
+
+    getManufacturerName(){
+
+        return cy.get('form > :nth-child(4) > :nth-child(1) input')
+    }
+
+    getModelNumber(){
+
+        return cy.get('form > :nth-child(4) > :nth-child(2) input')
+    }
+
+    getSerialNumber(){
+
+        return cy.get(':nth-child(4) > .col-sm-12 input')
+    }
+
+    getStatus(){
+
+        return cy.get('form > :nth-child(5) > :nth-child(1) input')
+    }
+
+    getStatusName(){
+
+        return cy.get('div[tabindex="0"] .v-list-item__content  .v-list-item__title')
+    }
+
+    getWarrantyFrom(){
+
+        return cy.get(':nth-child(5) > :nth-child(2) > .material-input__component > .material-input')
+    }
+
+    getWarrantyTo(){
+
+        return cy.get(':nth-child(5) > .col-sm-12 > .material-input__component > .material-input')
+    }
+
+    getDescription(){
+
+        return cy.get('.col > .material-input__component > .material-input')
+    }
+
+    getSubmit(){
+
+        return cy.get('.text-center > .btn')
+    }
+
 }
 
 export default AssetsPage;
