@@ -87,7 +87,7 @@ class AssetsPage {
 
     getSelectVendorTypeName(){
 
-        return cy.get(':nth-child(1) > .col-sm-12 > .v-input > .v-input__control > .v-input__slot')
+        return cy.get('div[role="listbox"] .v-list-item__content  .v-list-item__title')
     }
 
     getAssetName(){
@@ -165,6 +165,14 @@ class AssetsPage {
         return cy.get('.text-center > .btn')
     }
 
+    getProblemReporting(){
+
+        return cy.get("a[title='Problem Reporting']")
+    }
+
+    getProblemCode(){
+        return cy.get('[style="margin: 10px;"] > form > :nth-child(1) > :nth-child(1)')
+    }
 }
 
 export default AssetsPage;

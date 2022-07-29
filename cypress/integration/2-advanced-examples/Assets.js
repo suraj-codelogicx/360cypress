@@ -17,7 +17,7 @@ describe('Assets fuctionality', function(){
 
       })
 
-      it('Assets Category', function(){
+      it.skip('Assets Category', function(){
 
         cy.login(this.data.email, this.data.password);
 
@@ -62,7 +62,7 @@ describe('Assets fuctionality', function(){
 
     });
 
-    it('Assets Category Negative Test Case', function(){
+    it.skip('Assets Category Negative Test Case', function(){
 
       cy.login(this.data.email, this.data.password);
 
@@ -100,7 +100,7 @@ describe('Assets fuctionality', function(){
 
   });
 
-  it('Asset Registration', function(){
+  it.skip('Asset Registration', function(){
 
     cy.login(this.data.email, this.data.password);
 
@@ -138,9 +138,17 @@ describe('Assets fuctionality', function(){
         
         assetsPage.getSelectAssetCategoryName().eq(15).click()
 
-        assetsPage.getSelectVendorType().click()
+        assetsPage.getSelectVendorType().click({force: true})
 
-        assetsPage.getSelectAssetCategoryName().eq(16).click()
+        assetsPage.getSelectVendorTypeName().each(($e1, index, $list) =>{
+       
+          if($e1.text().trim(' ') ==='VN004-Gardener 01'){
+  
+              cy.wrap($e1).click({force: true})
+          }
+      })
+        
+        
 
         assetsPage.getAssetName().type('test Asset', {force: true})
 
@@ -162,7 +170,13 @@ describe('Assets fuctionality', function(){
 
         assetsPage.getStatus().eq(0).click({force: true})
 
-        assetsPage.getStatusName().eq(19).click()
+        assetsPage.getStatusName().each(($e1, index, $list) =>{
+       
+          if($e1.text().trim(' ') ==='Active'){
+  
+              cy.wrap($e1).click({force: true})
+          }
+      })
 
         assetsPage.getWarrantyFrom().type('2022-01-07', { force: true })
 
@@ -171,6 +185,28 @@ describe('Assets fuctionality', function(){
         assetsPage.getDescription().type('test', { force: true})
 
         assetsPage.getSubmit().click({force: true})
+
+});
+
+it('Update Assets Registrations', function(){
+
+  cy.login(this.data.email, this.data.password);
+
+       assetsPage.getManagement().click()
+
+        cy.wait(2000);
+  
+        assetsPage.getAssets().click()
+
+        cy.wait(2000);
+
+        assetsPage.getAssetRegistration().click({force: true})
+
+        cy.wait(2000);
+
+        assetsPage.getProblemReporting().eq(1).click()
+
+        assetsPage.getProblemCode().type('test001')
 
 });
 
