@@ -173,6 +173,65 @@ class AssetsPage {
     getProblemCode(){
         return cy.get('[style="margin: 10px;"] > form > :nth-child(1) > :nth-child(1)')
     }
+
+    getProblemRecordDate(){
+
+        return cy.get('[style="margin: 10px;"] > form > :nth-child(1) > :nth-child(2) input')
+    }
+
+    getObservedBy(){
+
+        return cy.get('form > :nth-child(2) > .col input')
+    }
+
+    getCheckBox(){
+
+      return  cy.get(':nth-child(2) > .row > :nth-child(2) > .mb-3 input')
+    }
+
+    getProblemDetails(){
+
+        return cy.get(':nth-child(1) > .material-input__component > .material-input')
+
+    }
+
+    getAdditionalRemarks(){
+
+        return cy.get(':nth-child(2) > .material-input__component > .material-input')
+    }
+
+    getReportButton(){
+
+        return cy.get('.text-center > .btn ')
+
+    }
+
+    getServicingDetails(){
+
+        return cy.get(':nth-child(1) > [aria-colindex="10"] > .list-inline > :nth-child(3) > .px-2 > .uil')
+    }
+
+    getServicingNumber(){
+
+        return cy.get('[style="margin: 10px;"] > form > :nth-child(1) > :nth-child(1) input')
+
+    }
+
+    getServicingAgainsttDropdown(){
+
+        return cy.get(':nth-child(2) > .v-input > .v-input__control > .v-input__slot > .v-select__slot > .v-select__selections')
+        
+    }
+
+    getDropDownSelect(){
+
+        return cy.get('.v-list-item__title')
+    }
+
+    getSelectReferenceCode(){
+
+        return cy.get(':nth-child(3) > .v-input > .v-input__control > .v-input__slot > .v-select__slot > .v-select__selections')
+    }
 }
 
 export default AssetsPage;
