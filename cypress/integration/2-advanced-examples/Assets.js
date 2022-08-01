@@ -17,7 +17,7 @@ describe('Assets fuctionality', function(){
 
       })
 
-      it.skip('Assets Category', function(){
+      it('Assets Category', function(){
 
         cy.login(this.data.email, this.data.password);
 
@@ -62,7 +62,7 @@ describe('Assets fuctionality', function(){
 
     });
 
-    it.skip('Assets Category Negative Test Case', function(){
+    it('Assets Category Negative Test Case', function(){
 
       cy.login(this.data.email, this.data.password);
 
@@ -100,7 +100,7 @@ describe('Assets fuctionality', function(){
 
   });
 
-  it.skip('Asset Registration', function(){
+  it('Asset Registration', function(){
 
     cy.login(this.data.email, this.data.password);
 
@@ -188,7 +188,7 @@ describe('Assets fuctionality', function(){
 
 });
 
-it.skip('Asset Registration With Negative Values', function(){
+it('Asset Registration With Negative Values', function(){
 
   cy.login(this.data.email, this.data.password);
 
@@ -207,10 +207,6 @@ it.skip('Asset Registration With Negative Values', function(){
       assetsPage.getSearchAssetRegistrations().eq(1).type('.../.', {force: true})
 
       cy.wait(2000);
-    
-      assetsPage.getVerifySearchAssetRegistrationResult().eq(40).should('contain', 'test')
-
-      cy.wait(2000)
 
       assetsPage.getSearchAssetRegistrations().eq(1).clear()
 
@@ -276,7 +272,7 @@ it.skip('Asset Registration With Negative Values', function(){
 
 });
 
-it.skip('Update Assets Registrations', function(){
+it('Update Assets Registrations', function(){
 
   cy.login(this.data.email, this.data.password);
 
@@ -313,7 +309,7 @@ it.skip('Update Assets Registrations', function(){
 
 });
 
-it.skip('Update Assets Registrations With Negative Values', function(){
+it('Update Assets Registrations With Negative Values', function(){
 
   cy.login(this.data.email, this.data.password);
 
