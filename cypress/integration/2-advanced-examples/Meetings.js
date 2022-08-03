@@ -48,6 +48,8 @@ describe('Meetings fuctionality', function(){
 
         meetingPage.getAddMeetingButton().click({force: true})
 
+        //need to rework when manual test cases are ready
+
         cy.wait(2000);
 
         meetingPage.getTopic().type('Test', {force: true})
