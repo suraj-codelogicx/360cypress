@@ -2,7 +2,7 @@
 
 import FlatOwnersPage from '../../support/pageObjects/FlatOwnersPage';
 
-describe('PetrollingRoutes fuctionality', function(){
+describe('Flatowners fuctionality', function(){
 
     const flatOwnersPage = new FlatOwnersPage();
 
@@ -17,7 +17,7 @@ describe('PetrollingRoutes fuctionality', function(){
 
       })
 
-      it('PetrollinRoutes', function(){
+      it('Flatowners', function(){
 
         cy.login(this.data.email, this.data.password);
   
