@@ -45,6 +45,28 @@ class FlatOwnersPage{
 
         return cy.get('.tableRow > tr > [aria-colindex="7"]')
     }
+
+    getRequestedUsers(){
+
+        return cy.contains('Requested users')
+    }
+
+    getAllUsers(){
+
+        return cy.contains('All users')
+
+    }
+
+    getAllUsersSearch(){
+
+        return cy.get('.col-8 input')
+    }
+
+    getVerifyAllUsersSearchData(){
+
+        return cy.get('span[style="font-weight: bold; font-size: 17px;"]')
+
+    }
 }
 
 export default FlatOwnersPage;

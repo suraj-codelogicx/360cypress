@@ -2,6 +2,7 @@
 
 import FlatOwnersPage from '../../support/pageObjects/FlatOwnersPage';
 
+
 describe('Flatowners fuctionality', function(){
 
     const flatOwnersPage = new FlatOwnersPage();
@@ -73,7 +74,27 @@ describe('Flatowners fuctionality', function(){
 
         cy.go('back')
         
+        cy.wait(2000)
 
+        flatOwnersPage.getRequestedUsers().click({force: true})
+
+        cy.wait(2000)
+
+        flatOwnersPage.getAllUsers().click({force: true})
+
+        cy.wait(2000)
+
+        flatOwnersPage.getAllUsersSearch().type('Soumya', {force: true})
+
+        cy.wait(2000)
+
+        flatOwnersPage.getVerifyAllUsersSearchData().should('contain', 'Soumya')
+
+        cy.wait(2000)
+
+        flatOwnersPage.getAllUsersSearch().clear()
+
+        cy.wait(2000)
 
 
     });
