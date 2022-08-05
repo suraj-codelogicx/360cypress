@@ -125,7 +125,7 @@ describe('Vehicle Log fuctionality', function(){
        
         cy.wait(2000)
 
-        vehicleLogPage.getValidateResultText().should('have.text', 'There are no records matching your request')
+        vehicleLogPage.getValidateResultText().should('have.text', 'There are no records to show')
 
         cy.wait(2000)
 

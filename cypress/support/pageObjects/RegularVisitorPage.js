@@ -33,7 +33,7 @@ class RegularVisitorPage
 
     getFilter() {
 
-        return cy.get('.submitButton ')
+        return cy.contains('Apply')
     }
 
     getFilterCategory() {

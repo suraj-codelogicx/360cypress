@@ -32,7 +32,7 @@ class RegularVisitorsLogPage{
 
     getFilterSubmit() {
 
-        return cy.get('.submitButton > .uil ')
+        return  cy.get('.addButton > .uil')
     }
 
     getIsInside() {
