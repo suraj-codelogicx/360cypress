@@ -89,6 +89,8 @@ describe('Parking Space fuctionality', function(){
 
         cy.wait(2000)
 
+        //parking list filter using for loop 
+
         parkingPage.getSelectFilterTypeName().each(($ele, index) => {
             if (index === 0) {
 
