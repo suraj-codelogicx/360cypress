@@ -27,11 +27,12 @@ describe('360 login fuctionality', function(){
        cy.visit('https://adminfontend.the360.in/')
 
 
-       loginPage.getEmail().type(this.data.email).invoke('attr', 'placeholder').should('contain', 'Email address')
+       loginPage.getEmail().type(this.data.email).invoke('attr', 'type').should('contain', 'email')
 
-       loginPage.getPassword().type(this.data.password).invoke('attr', 'placeholder').should('contain', 'Password')
-      
+       loginPage.getPassword().type(this.data.password).invoke('attr', 'type').should('contain', 'password')
+
        loginPage.getSubmitButton().should('be.visible')
+
        loginPage.getSubmitButton().click()
 
        //if alert exists then only click function
@@ -57,9 +58,9 @@ describe('360 login fuctionality', function(){
        cy.visit('https://adminfontend.the360.in/')
 
 
-       loginPage.getEmail().type('abhi@yopmail.com')
+       loginPage.getEmail().type('abhi@yopmail.com').invoke('attr', 'type').should('contain', 'email')
 
-       loginPage.getPassword().type(this.data.password).invoke('attr', 'placeholder').should('contain', 'Password')
+       loginPage.getPassword().type(this.data.password).invoke('attr', 'type').should('contain', 'password')
       
        loginPage.getSubmitButton().should('be.visible')
        loginPage.getSubmitButton().click()
@@ -75,8 +76,7 @@ describe('360 login fuctionality', function(){
        cy.visit('https://adminfontend.the360.in/')
 
 
-       loginPage.getEmail().type(this.data.email).invoke('attr', 'placeholder').should('contain', 'Email address')
-
+       loginPage.getEmail().type(this.data.email)
        loginPage.getPassword().type('56888')
       
        loginPage.getSubmitButton().should('be.visible')

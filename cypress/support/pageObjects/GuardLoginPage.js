@@ -69,7 +69,7 @@ class GuardLoginPage{
     getDeleteUser() {
 
 
-        return  cy.get(':nth-child(1) > [aria-colindex="6"] > .list-inline > :nth-child(2) > .px-2')
+        return  cy.get(':nth-child(1) > [aria-colindex="6"] > .list-inline > :nth-child(2) > span > .px-2 > .uil')
     }
 
     geConfirmDelete() {

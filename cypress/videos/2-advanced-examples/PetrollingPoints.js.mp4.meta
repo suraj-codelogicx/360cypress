@@ -1,0 +1,11 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=-20180
+END=5136
+title=PetrollinPoints fuctionality PetrollinPoints
+[CHAPTER]
+TIMEBASE=1/1000
+START=10484
+END=30478
+title=PetrollinPoints fuctionality PetrollinPoints With Negative Values
