@@ -84,7 +84,8 @@ describe('360 login fuctionality', function(){
 
 
     })
-//Login without Creds
+    //Login without Credential
+
     it('Login to 360dev server without any credential', function(){
 
 
